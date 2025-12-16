@@ -7,7 +7,7 @@
     "price": 1500,
     "status": true,
     "category": "Fideos",
-    "Thumbnails": [],
+    "Thumbnails": "./img/Fideos-Tirabuzón-Luchetti-500 g.jpg",
     "stock": 0
   },
   {
@@ -19,7 +19,7 @@
     "status": "active",
     "Stock": 45,
     "category": "Fideos",
-    "Thumbnails": []
+    "Thumbnails": "./img/Fideos-Macarrones-Luchetti-500 g.jpg"
   },
   {
     "id": "35a44fb9-4605-439f-9cae-ad4db166be91",
@@ -30,7 +30,7 @@
     "status": "active",
     "Stock": 55,
     "category": "Fideos",
-    "Thumbnails": []
+    "Thumbnails": "./img/Fideos-Coditos-Luchetti-500 g.jpg"
   },
   {
     "id": "012b4398-9445-43d1-a43a-0c7e5b1171af",
@@ -41,7 +41,7 @@
     "status": "active",
     "Stock": 30,
     "category": "Pastas Frescas",
-    "Thumbnails": []
+    "Thumbnails": "./img/Ravioles-4-Quesos-Luchetti-500 g.jpg"
   },
   {
     "id": "5d192470-26a2-4993-a8bf-05b74692b68e",
@@ -52,7 +52,7 @@
     "status": "active",
     "Stock": 25,
     "category": "Fideos",
-    "Thumbnails": []
+    "Thumbnails": "./img/fideo-matarazzo-500-spaghetti.jpg"
   },
   {
     "id": "0ee9666e-ef74-4b35-bba9-1df370e00817",
@@ -63,7 +63,7 @@
     "status": "active",
     "Stock": 25,
     "category": "Fideos",
-    "Thumbnails": []
+    "Thumbnails": "./img/Fideos-Tirabuzón-Matarazzo-500-g.jpg"
   },
   {
     "id": "7bd2b783-884f-49f8-bf1d-ee3b3ceeeaa6",
@@ -74,7 +74,7 @@
     "status": "active",
     "Stock": 25,
     "category": "Fideos",
-    "Thumbnails": []
+    "Thumbnails": "./img/Matarazzo-Mostachol.jpg"
   },
   {
     "id": "4dc157e9-bd4b-426c-9cb2-11a7f864baf9",
@@ -85,7 +85,7 @@
     "status": "active",
     "Stock": 25,
     "category": "Fideos",
-    "Thumbnails": []
+    "Thumbnails": "./img/Matarazzo-Coditos.jpg"
   },
   {
     "id": "231bce43-fb92-4aa6-91bc-57f95720ad92",
@@ -96,7 +96,7 @@
     "status": "active",
     "Stock": 25,
     "category": "Pastas Frescas",
-    "Thumbnails": []
+    "Thumbnails": "./img/Ravioles-Jamon-y-Queso-Matarazzo-500-g.jpg"
   },
   {
     "id": "271e5287-8b56-4093-b81b-6ac8c1906cd3",
@@ -107,7 +107,7 @@
     "status": "active",
     "Stock": 100,
     "category": "Fideos",
-    "Thumbnails": []
+    "Thumbnails": "./img/fideos-favorita-spaghetti.jpg"
   },
   {
     "id": "00a00127-dce7-4036-ad15-552d16120701",
@@ -118,7 +118,7 @@
     "status": "active",
     "Stock": 100,
     "category": "Fideos",
-    "Thumbnails": []
+    "Thumbnails": "./img/Fideos-Tirabuzón-fortificado-500-g.jpg"
   },
   {
     "id": "5b9f9389-de20-48e1-8475-e6302d508ec4",
@@ -129,7 +129,7 @@
     "status": "active",
     "Stock": 100,
     "category": "Fideos",
-    "Thumbnails": []
+    "Thumbnails": "./img/Fideos-Macarrones-fortificado-500-g.jpg"
   },
   {
     "id": "d99147f9-acfd-4e19-8e6e-bd24be164da6",
@@ -140,18 +140,7 @@
     "status": "active",
     "Stock": 100,
     "category": "Fideos",
-    "Thumbnails": []
-  },
-  {
-    "id": "2635c16d-c125-4edf-b651-c3eef8d55f86",
-    "title": "Ravioles Jamon y Queso fortificado 500 g",
-    "description": "Ravioles Jamon y Queso fortificado 500 g",
-    "code": "PST304",
-    "price": 1400,
-    "status": "active",
-    "Stock": 100,
-    "category": "Pastas Frescas",
-    "Thumbnails": []
+    "Thumbnails": "./img/Fideos-Coditos-fortificado-500-g.jpg"
   },
   {
     "id": "51ec94c9-3dcc-43c2-b865-9ab5acb3914d",
@@ -162,7 +151,18 @@
     "status": "active",
     "Stock": 50,
     "category": "Fideos",
-    "Thumbnails": []
+    "Thumbnails": "./img/Fideos-Spaghetti-Bulnez-500-g.jpg"
+  },
+  {
+    "id": "51ec94c9-3dcc-43c2-b865-9ab5acb3914d",
+    "title": "Fideos Codos Bulnez 500 g",
+    "description": "Fideos Bulnez 500 g",
+    "code": "PST400",
+    "price": 300,
+    "status": "active",
+    "Stock": 50,
+    "category": "Fideos",
+    "Thumbnails": "./img/Fideos-Codos-Bulnez-500-g.jpg"
   },
   {
     "id": "a369f7f5-b21c-4712-99f3-679b66e0c498",
@@ -569,6 +569,39 @@
     "status": true,
     "stock": 55,
     "category": "Papel",
+    "thumbnails": []
+  },
+  {
+    "id": "39b777d2-8c6b-4af5-9a44-8bd14e82561d",
+    "title": "Mani",
+    "description": "Mani con sal",
+    "code": "Ma21Sa1",
+    "price": 50000,
+    "status": true,
+    "stock": 200,
+    "category": "Snack",
+    "thumbnails": []
+  },
+  {
+    "id": "5bdd1742-f4c3-43a9-9699-010c4f7f5ace",
+    "title": "jugo",
+    "description": "prueba",
+    "code": "000",
+    "price": 0,
+    "status": true,
+    "stock": 1,
+    "category": "Prueba",
+    "thumbnails": []
+  },
+  {
+    "id": "80ae477e-1dc0-439b-87f4-cfcb59576cae",
+    "title": "Pureba2",
+    "description": "prueba2",
+    "code": "0001",
+    "price": 0,
+    "status": true,
+    "stock": 2,
+    "category": "Prueba",
     "thumbnails": []
   }
 ]

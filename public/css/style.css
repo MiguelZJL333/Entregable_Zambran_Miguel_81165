@@ -1,0 +1,550 @@
+/* ===== VARIABLES Y RESET ===== */
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --danger-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --dark-bg: #1a1a2e;
+    --darker-bg: #0f0f1e;
+    --card-bg: #16213e;
+    --card-hover: #1e2a4a;
+    --text-primary: #e8e8e8;
+    --text-secondary: #b0b0b0;
+    --accent-purple: #9d4edd;
+    --accent-blue: #4cc9f0;
+    --accent-pink: #f72585;
+    --accent-green: #06ffa5;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 20px rgba(157, 78, 221, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY Y FONDO ===== */
+body {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.dashboard, 
+.dashboard > div {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== TÍTULOS ===== */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 20px rgba(157, 78, 221, 0.3);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    color: var(--accent-green);
+    border-bottom: 2px solid var(--accent-green);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.dashboard-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== LISTAS DE PRODUCTOS ===== */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+ul#productsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+li {
+    background: var(--card-bg);
+    border: 2px solid rgba(157, 78, 221, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-gradient);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-purple);
+    background: var(--card-hover);
+}
+
+li:hover::before {
+    transform: scaleY(1);
+}
+
+li strong {
+    color: var(--accent-blue);
+    font-size: 1.1rem;
+}
+
+/* ===== TEXTO EN LISTAS ===== */
+li {
+    color: var(--text-primary);
+    font-size: 1rem;
+    flex: 1;
+}
+
+/* ===== FORMULARIOS ===== */
+form {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    margin: 2rem 0;
+    border: 2px solid rgba(157, 78, 221, 0.3);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.product-form {
+    width: 100%;
+}
+
+/* ===== INPUTS ===== */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.75rem 0;
+    font-size: 1rem;
+    border: 2px solid rgba(76, 201, 240, 0.3);
+    background: rgba(22, 33, 62, 0.8);
+    color: var(--text-primary);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: var(--accent-blue);
+    background: rgba(30, 42, 74, 0.9);
+    box-shadow: 0 0 15px rgba(76, 201, 240, 0.4);
+    transform: translateY(-2px);
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+.form-input {
+    margin: 0.75rem 0;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid rgba(76, 201, 240, 0.3);
+    background: rgba(22, 33, 62, 0.8);
+    color: var(--text-primary);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-input:focus {
+    border-color: var(--accent-blue);
+    background: rgba(30, 42, 74, 0.9);
+    box-shadow: 0 0 15px rgba(76, 201, 240, 0.4);
+    outline: none;
+}
+
+/* ===== BOTONES ===== */
+button,
+.form-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-sm);
+}
+
+button[type="submit"],
+.form-button {
+    background: var(--success-gradient);
+    color: white;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+button[type="submit"]:hover,
+.form-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+    filter: brightness(1.1);
+}
+
+button[type="submit"]:active,
+.form-button:active {
+    transform: translateY(-1px);
+}
+
+/* ===== BOTÓN ELIMINAR ===== */
+.delete-btn {
+    background: var(--danger-gradient) !important;
+    color: white !important;
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.9rem !important;
+    border-radius: 8px !important;
+    width: auto !important;
+    margin: 0 !important;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 15px rgba(247, 37, 133, 0.6);
+    filter: brightness(1.1);
+}
+
+.delete-btn:active {
+    transform: translateY(0) scale(1);
+}
+
+/* ===== PARRAFOS ===== */
+p {
+    text-align: center;
+    color: var(--text-secondary);
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+/* ===== TARJETAS DE PRODUCTO ===== */
+.product-card {
+    flex-basis: calc(33.333% - 1.5rem);
+    max-width: 350px;
+    min-width: 280px;
+    box-sizing: border-box;
+    background: var(--card-bg);
+    border: 2px solid rgba(157, 78, 221, 0.3);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-gradient);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-purple);
+    background: var(--card-hover);
+}
+
+.product-card:hover::before {
+    transform: scaleX(1);
+}
+
+.product-image-container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(15, 15, 30, 0.8) 0%, rgba(30, 42, 74, 0.6) 100%);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.product-image-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: var(--primary-gradient);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-image-container::after {
+    opacity: 1;
+}
+
+.product-image-container .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image-container .product-image {
+    transform: scale(1.05);
+}
+
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--accent-blue);
+    font-weight: 600;
+    line-height: 1.3;
+    min-height: 2.6em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-price {
+    color: var(--accent-green);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.product-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-category {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: rgba(157, 78, 221, 0.2);
+    color: var(--accent-purple);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    width: fit-content;
+}
+
+.product-stock {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0 0;
+}
+
+.product-card .delete-btn {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* ===== INFORMACIÓN DE USUARIO ===== */
+.user-info {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    border: 2px solid rgba(157, 78, 221, 0.3);
+}
+
+.username {
+    font-size: 1.5rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+.admin-message {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.admin-true {
+    color: var(--accent-green);
+}
+
+.admin-false {
+    color: var(--accent-pink);
+}
+
+/* ===== GRID DE PRODUCTOS ===== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+/* Para cuando es una lista ul dentro de product-grid */
+.product-grid ul {
+    display: contents;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+li, .product-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    ul, ul#productsList {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard, .dashboard > div {
+        padding: 1rem;
+    }
+    
+    form {
+        padding: 1.5rem;
+    }
+    
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .delete-btn {
+        width: 100% !important;
+        margin-top: 0.5rem !important;
+    }
+}
+
+/* ===== SCROLLBAR PERSONALIZADO ===== */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--darker-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gradient);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-gradient);
+}

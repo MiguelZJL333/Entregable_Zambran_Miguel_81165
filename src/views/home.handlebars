@@ -1,0 +1,32 @@
+<div class="dashboard">
+    <h1>Mercadillo de Miguelillo</h1>
+    <h2>El Mejor lugar para Comprar</h2>
+    <h3>Lista de productos que te puedes Llevar</h3>
+    {{#if products}}
+        <div class="product-grid">
+            {{#each products}}
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="{{getImageUrl this.Thumbnails}}" alt="{{this.title}}" class="product-image" 
+                            onerror="this.src='/img/placeholder.jpg'; this.onerror=null;">
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">{{this.title}}</h4>
+                        <p class="product-price">${{this.price}}</p>
+                        {{#if this.description}}
+                            <p class="product-description">{{this.description}}</p>
+                        {{/if}}
+                        {{#if this.category}}
+                            <span class="product-category">{{this.category}}</span>
+                        {{/if}}
+                        {{#if this.stock}}
+                            <p class="product-stock">Stock: {{this.stock}}</p>
+                        {{/if}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <p style="text-align: center; padding: 2rem; color: var(--text-secondary);">No hay productos disponibles en este momento.</p>
+    {{/if}}
+</div>

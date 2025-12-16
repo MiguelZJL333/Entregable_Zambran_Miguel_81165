@@ -1,0 +1,48 @@
+<div class="dashboard">
+    <h1>Real Time Products</h1>
+    <p>Agregar Productos</p>
+    
+    <form id="formNewProducts" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Nombre del producto" required>
+        <input type="text" name="description" placeholder="Descripción del producto" required>
+        <input type="text" name="category" placeholder="Categoría del producto" required>
+        <input type="text" name="code" placeholder="Código del producto" required>
+        <input type="number" name="price" placeholder="Precio" step="0.01" min="0" required>
+        <input type="number" name="stock" placeholder="Cantidad de stock" min="0" required>
+        <button type="submit">Agregar Producto</button>
+    </form>
+    
+    <h2>El Mejor lugar para Comprar</h2>
+    <h3>Lista de productos que te puedes Llevar</h3>
+    
+    {{#if products}}
+        <div class="product-grid" id="productsList">
+            {{#each products}}
+            <div class="product-card" id="product-{{this.id}}">
+                <div class="product-image-container">
+                    <img src="{{getImageUrl this.Thumbnails}}" alt="{{this.title}}" class="product-image" 
+                         onerror="this.src='/img/placeholder.jpg'; this.onerror=null;">
+                </div>
+                <div class="product-info">
+                    <h4 class="product-title">{{this.title}}</h4>
+                    <p class="product-price">${{this.price}}</p>
+                    {{#if this.description}}
+                        <p class="product-description">{{this.description}}</p>
+                    {{/if}}
+                    {{#if this.category}}
+                        <span class="product-category">{{this.category}}</span>
+                    {{/if}}
+                    {{#if this.stock}}
+                        <p class="product-stock">Stock: {{this.stock}}</p>
+                    {{/if}}
+                    <button class="delete-btn" data-id="{{this.id}}">Eliminar</button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <p style="text-align: center; padding: 2rem; color: var(--text-secondary);">No hay productos disponibles. ¡Agrega uno usando el formulario de arriba!</p>
+    {{/if}}
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

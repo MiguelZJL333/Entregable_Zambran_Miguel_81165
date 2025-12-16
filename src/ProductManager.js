@@ -175,3 +175,5 @@ router.delete('/:pid', async (req, res) => {
 });
 
 export default router;
+// Exportar la clase también para poder usarla desde otros módulos
+export { ProductManager };
